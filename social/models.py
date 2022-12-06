@@ -6,5 +6,5 @@ from django.contrib.auth.models import User
 
 class Post(models.Model):
     body = models.TextField()
-    create_on = models.DateTimeField(default=timezone.now)
+    created_on = models.DateTimeField(default=timezone.now)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
