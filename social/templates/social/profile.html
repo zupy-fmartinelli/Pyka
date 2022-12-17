@@ -39,7 +39,7 @@
             {% endif %}
 
             <div class="mb-3">
-              <p>Followers: {{ number_of_followers }}</p>
+              <a href="{% url 'list-followers' profile.pk %}" class="link-dark">Followers: {{ number_of_followers }}</a>
               {% if user == request.user %}
               {% else %}
               {% if is_following %}
