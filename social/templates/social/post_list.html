@@ -21,10 +21,18 @@
 
   {% for post in post_list %}
   <div class="row justify-content-center mt-3">
-    <div class="col-md-5 col-sm-12 border-bottom position-relative">
-      <div class="col-md-8 col-sm-12 border-bottom">
-        <p><a href="{% url 'profile' post.author.pk %}" class="link-info">@{{ post.author }}</a> {{ post.created_on }}</p>
-        <div class="position-relative">
+    <div class="col-md-5 col-sm-12 border-bottom">
+      <div class="col-md-8 col-sm-12">
+        <div>
+          <a href="{% url 'profile' post.author.profile.pk %}">
+            <img class="rounded-circle post-img" src="{{ post.author.profile.picture.url }}" alt="profile pic" width="30" height="30" />
+          </a>
+          <p class="post-text">
+            <a href="{% url 'profile' post.author.pk %}" class="link-dark">@{{ post.author }}</a> {{ post.created_on }}
+          </p>
+        </div>
+        
+        <div class="">
         <p>{{ post.body }}</p>
         <a href="{% url 'post-detail' post.pk %}" class="stretched-link"></a>
         </div>
@@ -42,7 +50,7 @@
               <i class="far fa-thumbs-down"><span>{{ post.dislikes.all.count }}</span></i></button>
           </form>                      
       </div>
-
+    </div>
     </div>
   </div>
   {% endfor %}

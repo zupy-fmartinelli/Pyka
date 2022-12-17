@@ -13,3 +13,20 @@
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
 }
+
+.post-text{
+    padding-top: 0.5rem;
+}
+
+.post-img{
+    float: left;
+    margin-right: 1rem;
+}
+
+a.link-dark {
+    text-decoration: none;
+  }
+
+a.link-dark:hover {
+    text-decoration:underline;
+}
